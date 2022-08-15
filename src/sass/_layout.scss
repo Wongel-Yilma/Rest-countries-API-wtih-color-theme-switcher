@@ -40,3 +40,12 @@
   padding: 2rem 4rem;
   margin: 0 auto;
 }
+.contries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3rem;
+  row-gap: 4rem;
+}
+
+.country {
+}
