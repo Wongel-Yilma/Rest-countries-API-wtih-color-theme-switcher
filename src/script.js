@@ -6,12 +6,10 @@ const API_URL_ALL = 'https://restcountries.com/v3.1/all';
 const API_URL = 'https://restcountries.com/v3.1/name/';
 const selectFilter = document.querySelector('#region');
 
-console.log(region);
 // Data Fetching Functions
 const getAllCountries = async function () {
   const res = await fetch(API_URL_ALL);
   const data = await res.json();
-  console.log(data);
   app.registerCountryData(data);
   data.forEach(country => app.renderCountry(countryContainer, country));
 };
@@ -36,6 +34,7 @@ class App {
     this.#countries = data;
   }
   _generateMarkup(country) {
+    const population = new Intl.NumberFormat().format(country.population);
     return `
           <div class="country">
             <div class="country__flag">
@@ -47,7 +46,7 @@ class App {
                   <div class="country__info-item">
 
                   <p>Population:</p>
-                  <span>${country.population}</span> </div>
+                  <span>${population}</span> </div>
                   <div class="country__info-item">
                   <p>Region:</p>
                   <span>${country.region}</span></div>
@@ -81,7 +80,6 @@ class App {
   }
   _filterCountries(e) {
     const filter = e.target.value;
-    console.log(filter);
     const filteredCountries = this.#countries.filter(
       country => country.region === filter
     );
