@@ -79,6 +79,7 @@
   margin: 0 auto;
   color: $gray-light;
   align-items: center;
+  gap: 4rem;
   p {
     font-weight: 600;
   }
@@ -90,14 +91,13 @@
     border-radius: 0.5rem;
     display: flex;
     gap: 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     background-color: $primary-light;
     font-weight: 600;
     color: rgba($gray-light, 0.75);
     box-shadow: 0 0 2rem rgba($primary-dark, 0.15);
     margin-bottom: 4rem;
     cursor: pointer;
-
     transition: all 0.3s;
     &:hover {
       transform: scale(1.02);
@@ -126,7 +126,7 @@
     flex-wrap: wrap;
   }
   &__border-btn {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     border: none;
     display: inline-block;
     background-color: $primary-light;
@@ -135,5 +135,10 @@
     border-radius: 6px;
     color: rgba($gray-light, 0.75);
     cursor: pointer;
+    box-shadow: 0 0 2rem rgba($primary-dark, 0.2);
+    transition: all 0.35s;
+    &:hover {
+      background-color: $primary-color;
+    }
   }
 }

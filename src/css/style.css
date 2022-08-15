@@ -16,7 +16,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-family: 'Nunito Sans';
   background-color: #202c37; }
 
@@ -88,7 +88,8 @@ body {
   padding: 6rem 4rem;
   margin: 0 auto;
   color: #e6e6e6;
-  align-items: center; }
+  align-items: center;
+  gap: 4rem; }
   .detail p {
     font-weight: 600; }
   .detail__btn {
@@ -98,7 +99,7 @@ body {
     border-radius: 0.5rem;
     display: flex;
     gap: 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     background-color: #2b3945;
     font-weight: 600;
     color: rgba(230, 230, 230, 0.75);
@@ -126,7 +127,7 @@ body {
     gap: 1rem;
     flex-wrap: wrap; }
   .detail__border-btn {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     border: none;
     display: inline-block;
     background-color: #2b3945;
@@ -134,7 +135,11 @@ body {
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     color: rgba(230, 230, 230, 0.75);
-    cursor: pointer; }
+    cursor: pointer;
+    box-shadow: 0 0 2rem rgba(17, 21, 23, 0.2);
+    transition: all 0.35s; }
+    .detail__border-btn:hover {
+      background-color: #202c37; }
 
 .header {
   margin: 0 auto;
