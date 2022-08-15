@@ -11,7 +11,7 @@ const createCountryData = function (data) {
     flag: data.flags.png,
     region: data.region,
     population: data.population,
-    capital: data.capital[0],
+    capital: data.capital ? data.capital : 'No Capital Listed',
   };
 };
 const generateMarkup = function (country) {
