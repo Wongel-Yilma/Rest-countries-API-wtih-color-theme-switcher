@@ -4,7 +4,9 @@
 const countryContainer = document.querySelector('.countries');
 const API_URL_ALL = 'https://restcountries.com/v3.1/all';
 const API_URL = 'https://restcountries.com/v3.1/name/';
+const selectFilter = document.querySelector('#region');
 
+console.log(region);
 // Data Fetching Functions
 const getAllCountries = async function () {
   const res = await fetch(API_URL_ALL);
@@ -28,6 +30,7 @@ class App {
   #countries = [];
   constructor() {
     this._getAllCountriesData();
+    region.onchange = this._filterCountries.bind(this);
   }
   registerCountryData(data) {
     this.#countries = data;
@@ -75,6 +78,20 @@ class App {
       population: data.population,
       capital: data.capital ? data.capital : 'No Capital Listed',
     };
+  }
+  _filterCountries(e) {
+    const filter = e.target.value;
+    console.log(filter);
+    const filteredCountries = this.#countries.filter(
+      country => country.region === filter
+    );
+    this._clear(countryContainer);
+    filteredCountries.forEach(country =>
+      this.renderCountry(countryContainer, country)
+    );
+  }
+  _clear(container) {
+    container.innerHTML = '';
   }
 }
 const app = new App();

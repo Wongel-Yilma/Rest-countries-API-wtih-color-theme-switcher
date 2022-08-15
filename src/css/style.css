@@ -51,7 +51,9 @@ body {
     outline: none;
     height: 4rem;
     background-color: #2b3945;
-    border-radius: 8px; }
+    border-radius: 8px;
+    padding: 0 2rem;
+    color: #e6e6e6; }
 
 .country {
   color: #e6e6e6;
