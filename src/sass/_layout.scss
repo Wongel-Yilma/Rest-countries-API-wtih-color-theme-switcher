@@ -29,6 +29,8 @@
     font-weight: 600;
     color: inherit;
     transition: all 0.3s;
+    cursor: pointer;
+
     &:hover {
       background-color: $primary-color;
     }

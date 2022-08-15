@@ -48,7 +48,8 @@ body {
     font-size: 2.4rem;
     background-color: transparent;
     left: 0.8rem;
-    top: 0.7rem; }
+    top: 0.7rem;
+    cursor: pointer; }
   .form select {
     border: none;
     outline: none;
@@ -86,7 +87,10 @@ body {
   max-width: 120rem;
   padding: 6rem 4rem;
   margin: 0 auto;
-  color: #e6e6e6; }
+  color: #e6e6e6;
+  align-items: center; }
+  .detail p {
+    font-weight: 600; }
   .detail__btn {
     display: block;
     border: none;
@@ -98,20 +102,39 @@ body {
     background-color: #2b3945;
     font-weight: 600;
     color: rgba(230, 230, 230, 0.75);
-    box-shadow: 0 0 2rem rgba(17, 21, 23, 0.15); }
+    box-shadow: 0 0 2rem rgba(17, 21, 23, 0.15);
+    margin-bottom: 4rem;
+    cursor: pointer;
+    transition: all 0.3s; }
+    .detail__btn:hover {
+      transform: scale(1.02);
+      background-color: #202c37; }
   .detail__preview {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
   .detail__list {
     list-style: none;
-    margin-bottom: 4rem; }
+    margin-bottom: 4rem;
+    column-count: 2; }
+  .detail__border {
+    display: flex;
+    gap: 1rem; }
+    .detail__border p {
+      margin-top: 0.2rem; }
+  .detail__border-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; }
   .detail__border-btn {
+    font-size: 1.6rem;
     border: none;
     display: inline-block;
     background-color: #2b3945;
     color: #e6e6e6;
-    padding: 1rem 2rem;
-    border-radius: 6px; }
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    color: rgba(230, 230, 230, 0.75);
+    cursor: pointer; }
 
 .header {
   margin: 0 auto;
@@ -141,7 +164,8 @@ body {
     background-color: inherit;
     font-weight: 600;
     color: inherit;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    cursor: pointer; }
     .header__btn:hover {
       background-color: #202c37; }
 

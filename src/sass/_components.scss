@@ -27,6 +27,7 @@
     background-color: transparent;
     left: 0.8rem;
     top: 0.7rem;
+    cursor: pointer;
   }
 
   select {
@@ -77,6 +78,10 @@
   padding: 6rem 4rem;
   margin: 0 auto;
   color: $gray-light;
+  align-items: center;
+  p {
+    font-weight: 600;
+  }
 
   &__btn {
     display: block;
@@ -90,6 +95,14 @@
     font-weight: 600;
     color: rgba($gray-light, 0.75);
     box-shadow: 0 0 2rem rgba($primary-dark, 0.15);
+    margin-bottom: 4rem;
+    cursor: pointer;
+
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.02);
+      background-color: $primary-color;
+    }
   }
   &__preview {
     display: grid;
@@ -98,13 +111,29 @@
   &__list {
     list-style: none;
     margin-bottom: 4rem;
+    column-count: 2;
+  }
+  &__border {
+    display: flex;
+    gap: 1rem;
+    p {
+      margin-top: 0.2rem;
+    }
+  }
+  &__border-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
   &__border-btn {
+    font-size: 1.6rem;
     border: none;
     display: inline-block;
     background-color: $primary-light;
     color: $gray-light;
-    padding: 1rem 2rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 6px;
+    color: rgba($gray-light, 0.75);
+    cursor: pointer;
   }
 }
