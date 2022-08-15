@@ -8,7 +8,9 @@ const API_URL = 'https://restcountries.com/v3.1/name/';
 const countryContainer = document.querySelector('.countries');
 const selectFilter = document.querySelector('#region');
 const formEl = document.querySelector('.form');
-
+// Dev
+formEl.classList.add('hidden');
+document.querySelector('.container').classList.add('hidden');
 // Data Fetching Functions
 const getAllCountries = async function () {
   const res = await fetch(API_URL_ALL);
@@ -24,8 +26,6 @@ const getCountry = async function (country) {
   console.log(data);
   app.renderCountry(countryContainer, data);
 };
-
-// getCountry('usa');
 
 class App {
   #countries = [];
