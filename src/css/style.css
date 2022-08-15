@@ -21,10 +21,12 @@ body {
   background-color: #202c37; }
 
 .heading-1 {
-  font-size: 3.2rem;
-  font-weight: 800; }
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fafafa; }
 
 .form {
+  margin: 0 auto;
   max-width: 120rem;
   padding: 2rem 4rem;
   display: flex;
@@ -36,10 +38,12 @@ body {
     width: 40%; }
   .form__input {
     border: none;
+    outline: none;
     height: 4rem;
     background-color: #2b3945;
     padding-left: 4rem;
-    width: 100%; }
+    width: 100%;
+    border-radius: 8px; }
   .form__btn {
     border: none;
     position: absolute;
@@ -47,6 +51,12 @@ body {
     background-color: transparent;
     left: 0.8rem;
     top: 0.7rem; }
+  .form select {
+    border: none;
+    outline: none;
+    height: 4rem;
+    background-color: #2b3945;
+    border-radius: 8px; }
 
 .header {
   margin: 0 auto;
@@ -58,7 +68,9 @@ body {
   display: flex;
   align-items: center; }
   .header__container {
+    margin: 0 auto;
     width: 120rem;
+    padding: 2rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between; }
@@ -71,10 +83,14 @@ body {
     align-items: center;
     gap: 0.8rem;
     border-radius: 5px;
-    background-color: #202c37;
+    background-color: inherit;
     font-weight: 600;
-    color: inherit; }
+    color: inherit;
+    transition: all 0.3s; }
+    .header__btn:hover {
+      background-color: #202c37; }
 
 .container {
   max-width: 120rem;
-  padding: 2rem 4rem; }
+  padding: 2rem 4rem;
+  margin: 0 auto; }

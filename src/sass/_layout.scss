@@ -8,7 +8,10 @@
   display: flex;
   align-items: center;
   &__container {
+    margin: 0 auto;
     width: 120rem;
+    padding: 2rem 2rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,13 +25,18 @@
     align-items: center;
     gap: 0.8rem;
     border-radius: 5px;
-    background-color: $primary-color;
+    background-color: inherit;
     font-weight: 600;
     color: inherit;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $primary-color;
+    }
   }
 }
 
 .container {
   max-width: 120rem;
   padding: 2rem 4rem;
+  margin: 0 auto;
 }

@@ -1,9 +1,12 @@
 .heading-1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 800;
+  color: $gray-light;
 }
 
 .form {
+  margin: 0 auto;
+
   max-width: 120rem;
   padding: 2rem 4rem;
   display: flex;
@@ -16,10 +19,12 @@
   }
   &__input {
     border: none;
+    outline: none;
     height: 4rem;
     background-color: $primary-light;
     padding-left: 4rem;
     width: 100%;
+    border-radius: 8px;
   }
   &__btn {
     border: none;
@@ -28,5 +33,12 @@
     background-color: transparent;
     left: 0.8rem;
     top: 0.7rem;
+  }
+  select {
+    border: none;
+    outline: none;
+    height: 4rem;
+    background-color: $primary-light;
+    border-radius: 8px;
   }
 }
