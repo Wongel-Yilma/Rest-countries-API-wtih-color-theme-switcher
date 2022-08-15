@@ -1,10 +1,13 @@
 'use strict';
 //////////////////////////////////////
-// Select DOM Elements
-const countryContainer = document.querySelector('.countries');
+// Declare Variables
 const API_URL_ALL = 'https://restcountries.com/v3.1/all';
 const API_URL = 'https://restcountries.com/v3.1/name/';
+
+// Select DOM Elements
+const countryContainer = document.querySelector('.countries');
 const selectFilter = document.querySelector('#region');
+const formEl = document.querySelector('.form');
 
 // Data Fetching Functions
 const getAllCountries = async function () {
@@ -29,6 +32,14 @@ class App {
   constructor() {
     this._getAllCountriesData();
     region.onchange = this._filterCountries.bind(this);
+    formEl.addEventListener('submit', this.addFormSubmitHandler.bind(this));
+  }
+  addFormSubmitHandler(e) {
+    e.preventDefault();
+    const searchCountry = e.target.querySelector('.form__input').value;
+    console.log(searchCountry);
+    getCountry(searchCountry);
+    this._clear(countryContainer);
   }
   registerCountryData(data) {
     this.#countries = data;
