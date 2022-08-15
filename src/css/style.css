@@ -23,7 +23,11 @@ body {
 .heading-1 {
   font-size: 3rem;
   font-weight: 800;
-  color: #fafafa; }
+  color: #d9d9d9; }
+
+.heading-2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.6rem; }
 
 .form {
   margin: 0 auto;
@@ -58,9 +62,29 @@ body {
     background-color: #2b3945;
     border-radius: 8px; }
 
+.country {
+  color: #d9d9d9;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background-color: #2b3945; }
+  .country__flag {
+    margin-bottom: 2rem; }
+  .country p {
+    font-weight: 600; }
+  .country__info {
+    height: 20rem;
+    padding-left: 2rem; }
+  .country__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; }
+  .country__info-item {
+    display: flex;
+    gap: 1rem; }
+
 .header {
   margin: 0 auto;
-  color: #fafafa;
+  color: #d9d9d9;
   padding: 0 3rem;
   height: 8rem;
   background-color: #2b3945;
@@ -95,8 +119,8 @@ body {
   padding: 2rem 4rem;
   margin: 0 auto; }
 
-.contries {
+.countries {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 3rem;
   row-gap: 4rem; }

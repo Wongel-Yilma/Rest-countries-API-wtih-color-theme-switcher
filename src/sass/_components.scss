@@ -1,9 +1,3 @@
-.heading-1 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: $gray-light;
-}
-
 .form {
   margin: 0 auto;
 
@@ -40,5 +34,33 @@
     height: 4rem;
     background-color: $primary-light;
     border-radius: 8px;
+  }
+}
+
+.country {
+  color: $gray-light;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background-color: $primary-light;
+  box-shadow: 0 0 2rem rgba($primary-dark, 0.3);
+  &__flag {
+    margin-bottom: 2rem;
+  }
+  p {
+    font-weight: 600;
+  }
+
+  &__info {
+    height: 18rem;
+    padding-left: 2rem;
+  }
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  &__info-item {
+    display: flex;
+    gap: 1rem;
   }
 }
