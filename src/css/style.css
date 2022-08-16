@@ -92,6 +92,8 @@ body {
   gap: 4rem; }
   .detail p {
     font-weight: 600; }
+  .detail__img {
+    width: fit-content; }
   .detail__btn {
     display: block;
     border: none;
@@ -112,11 +114,15 @@ body {
       background-color: #202c37; }
   .detail__preview {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem; }
   .detail__list {
     list-style: none;
     margin-bottom: 4rem;
     column-count: 2; }
+  .detail__item {
+    display: flex;
+    gap: 1rem; }
   .detail__border {
     display: flex;
     gap: 1rem; }

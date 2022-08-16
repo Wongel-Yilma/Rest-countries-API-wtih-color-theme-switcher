@@ -83,6 +83,9 @@
   p {
     font-weight: 600;
   }
+  &__img {
+    width: fit-content;
+  }
 
   &__btn {
     display: block;
@@ -107,11 +110,16 @@
   &__preview {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
   &__list {
     list-style: none;
     margin-bottom: 4rem;
     column-count: 2;
+  }
+  &__item {
+    display: flex;
+    gap: 1rem;
   }
   &__border {
     display: flex;
