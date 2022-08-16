@@ -47,6 +47,7 @@
   overflow: hidden;
   background-color: $primary-light;
   box-shadow: 0 0 2rem rgba($primary-dark, 0.3);
+  cursor: pointer;
   &__flag {
     margin-bottom: 2rem;
   }
@@ -84,7 +85,8 @@
     font-weight: 600;
   }
   &__img {
-    width: fit-content;
+    width: 100%;
+    height: auto;
   }
 
   &__btn {
@@ -110,7 +112,8 @@
   &__preview {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    gap: 8rem;
+    align-items: center;
   }
   &__list {
     list-style: none;

@@ -11,8 +11,8 @@ const formEl = document.querySelector('.form');
 const backBtn = document.querySelector('.detail__btn');
 const detailEl = document.querySelector('.detail');
 // Dev
-formEl.classList.add('hidden');
-document.querySelector('.container').classList.add('hidden');
+// formEl.classList.add('hidden');
+// document.querySelector('.container').classList.add('hidden');
 // Data Fetching Functions
 const getAllCountries = async function () {
   const res = await fetch(API_URL_ALL);
@@ -37,7 +37,29 @@ class App {
     this._getAllCountriesData();
     region.onchange = this._filterCountries.bind(this);
     formEl.addEventListener('submit', this.addFormSubmitHandler.bind(this));
-    backBtn.addEventListener('click', this.detailHandler.bind(this));
+    backBtn.addEventListener('click', this._backBtnHandler.bind(this));
+    countryContainer.addEventListener(
+      'click',
+      this._addCountryDetailHandler.bind(this)
+    );
+  }
+  _addCountryDetailHandler(e) {
+    const countryClicked = e.target
+      .closest('.country')
+      .querySelector('.heading-2').textContent;
+    console.log(countryClicked);
+    const data = this.#countries.find(
+      country => country.name.common == countryClicked
+    );
+    this._createDetailData(data);
+    this._createDetailMarkup();
+    console.log(data);
+    formEl.classList.add('hidden');
+    document.querySelector('.container').classList.add('hidden');
+  }
+  _backBtnHandler() {
+    formEl.classList.remove('hidden');
+    document.querySelector('.container').classList.remove('hidden');
   }
   addFormSubmitHandler(e) {
     e.preventDefault();
@@ -107,11 +129,7 @@ class App {
   _clear(container) {
     container.innerHTML = '';
   }
-  detailHandler() {
-    const data = this.#countries[137];
-    this._createDetailData(data);
-    this._createDetailMarkup();
-  }
+
   _createDetailData(data) {
     const { common } = Object.values(data.name.nativeName).at(0);
     const currencies = Object.values(data.currencies).reduce((curArr, cur) => {

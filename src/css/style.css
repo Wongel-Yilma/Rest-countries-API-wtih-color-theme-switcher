@@ -64,7 +64,8 @@ body {
   border-radius: 0.8rem;
   overflow: hidden;
   background-color: #2b3945;
-  box-shadow: 0 0 2rem rgba(17, 21, 23, 0.3); }
+  box-shadow: 0 0 2rem rgba(17, 21, 23, 0.3);
+  cursor: pointer; }
   .country__flag {
     margin-bottom: 2rem; }
   .country__flag-img {
@@ -93,7 +94,8 @@ body {
   .detail p {
     font-weight: 600; }
   .detail__img {
-    width: fit-content; }
+    width: 100%;
+    height: auto; }
   .detail__btn {
     display: block;
     border: none;
@@ -115,7 +117,8 @@ body {
   .detail__preview {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem; }
+    gap: 8rem;
+    align-items: center; }
   .detail__list {
     list-style: none;
     margin-bottom: 4rem;
