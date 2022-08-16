@@ -113,7 +113,7 @@
 
 .detail {
   max-width: 120rem;
-  padding: 6rem 4rem;
+  padding: 4rem 4rem;
   margin: 0 auto;
   color: $gray-light;
   align-items: center;
@@ -151,6 +151,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 8rem;
     align-items: center;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
   }
   &__list {
     list-style: none;

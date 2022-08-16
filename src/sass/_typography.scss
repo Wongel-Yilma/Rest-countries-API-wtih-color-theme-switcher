@@ -2,7 +2,7 @@
   font-size: 3rem;
   font-weight: 800;
   color: $gray-light;
-  @include respond(tab-land) {
+  @include respond(phone) {
     font-size: 2rem;
   }
 }

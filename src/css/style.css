@@ -129,7 +129,7 @@ body {
 
 .detail {
   max-width: 120rem;
-  padding: 6rem 4rem;
+  padding: 4rem 4rem;
   margin: 0 auto;
   color: #e6e6e6;
   align-items: center;
@@ -162,6 +162,9 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 8rem;
     align-items: center; }
+    @media only screen and (max-width: 56.25em) {
+      .detail__preview {
+        grid-template-columns: 1fr; } }
   .detail__list {
     list-style: none;
     margin-bottom: 4rem;
@@ -263,7 +266,7 @@ body {
   font-size: 3rem;
   font-weight: 800;
   color: #e6e6e6; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 37.5em) {
     .heading-1 {
       font-size: 2rem; } }
 
