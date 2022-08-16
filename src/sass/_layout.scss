@@ -50,4 +50,11 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 3rem;
   row-gap: 4rem;
+  @include respond(tab-land) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond(phone) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

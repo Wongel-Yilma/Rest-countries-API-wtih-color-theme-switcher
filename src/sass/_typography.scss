@@ -2,6 +2,9 @@
   font-size: 3rem;
   font-weight: 800;
   color: $gray-light;
+  @include respond(tab-land) {
+    font-size: 2rem;
+  }
 }
 .heading-2 {
   font-size: 2.5rem;
