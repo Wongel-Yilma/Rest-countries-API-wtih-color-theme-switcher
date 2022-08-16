@@ -49,10 +49,11 @@ class App {
     );
     themeSelector.addEventListener('click', function () {
       body.classList.toggle('night-mode');
-      headerEl.classList.toggle('night-mode');
-      themeSelector.classList.toggle('night-mode');
-      formEl.classList.toggle('night-mode');
+      // headerEl.classList.toggle('night-mode');
+      // themeSelector.classList.toggle('night-mode');
+      // formEl.classList.toggle('night-mode');
     });
+    detailEl.addEventListener('click', this._addBorderHandler.bind(this));
   }
   _addCountryDetailHandler(e) {
     const countryClicked = e.target
@@ -74,6 +75,17 @@ class App {
     formEl.classList.remove('hidden');
     document.querySelector('.container').classList.remove('hidden');
     detailEl.classList.add('hidden');
+  }
+  _addBorderHandler(e) {
+    if (!e.target.closest('.detail__border-btn')) return;
+    const borderCountry = e.target.closest('.detail__border-btn').dataset.name;
+    console.log(borderCountry);
+    const data = this.#countries.find(
+      country => country.name.common == borderCountry
+    );
+    this._clearDetail();
+    this._createDetailData(data);
+    this._createDetailMarkup();
   }
   addFormSubmitHandler(e) {
     e.preventDefault();
