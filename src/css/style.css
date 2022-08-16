@@ -42,6 +42,8 @@ body {
     padding-left: 4rem;
     width: 100%;
     border-radius: 8px; }
+    .form__input::placeholder {
+      color: #e6e6e6; }
   .form__btn {
     border: none;
     position: absolute;

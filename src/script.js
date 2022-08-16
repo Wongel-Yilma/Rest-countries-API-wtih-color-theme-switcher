@@ -14,6 +14,8 @@ const detailEl = document.querySelector('.detail');
 // formEl.classList.add('hidden');
 // document.querySelector('.container').classList.add('hidden');
 // Data Fetching Functions
+detailEl.classList.add('hidden');
+
 const getAllCountries = async function () {
   const res = await fetch(API_URL_ALL);
   const data = await res.json();
@@ -51,15 +53,18 @@ class App {
     const data = this.#countries.find(
       country => country.name.common == countryClicked
     );
+    this._clearDetail();
     this._createDetailData(data);
     this._createDetailMarkup();
     console.log(data);
     formEl.classList.add('hidden');
     document.querySelector('.container').classList.add('hidden');
+    detailEl.classList.remove('hidden');
   }
   _backBtnHandler() {
     formEl.classList.remove('hidden');
     document.querySelector('.container').classList.remove('hidden');
+    detailEl.classList.add('hidden');
   }
   addFormSubmitHandler(e) {
     e.preventDefault();
@@ -140,13 +145,16 @@ class App {
     const languages = Object.values(data.languages);
     console.log(data.borders);
     const borderCountries = data.borders;
-    const borderNames = borderCountries.reduce((borders, border) => {
-      const namedCountry = this.#countries.find(
-        country => country.cca3 === border
-      );
-      borders.push(namedCountry.name.common);
-      return borders;
-    }, []);
+    console.log(borderCountries);
+    const borderNames = borderCountries
+      ? borderCountries.reduce((borders, border) => {
+          const namedCountry = this.#countries.find(
+            country => country.cca3 === border
+          );
+          borders.push(namedCountry.name.common);
+          return borders;
+        }, [])
+      : null;
     this.#detail = {
       name: data.name.common,
       flag: data.flags.png,
@@ -169,9 +177,11 @@ class App {
     const languagesMarkup = detail.languages.reduce((markup, cur) => {
       return (markup += `<span>${cur}</span>`);
     }, '');
-    const borderMarkup = detail.borderNames.reduce((markup, cur) => {
-      return (markup += `<button class="detail__border-btn" data-name="${cur}">${cur}</button>`);
-    }, '');
+    const borderMarkup = detail.borderNames
+      ? detail.borderNames.reduce((markup, cur) => {
+          return (markup += `<button class="detail__border-btn" data-name="${cur}">${cur}</button>`);
+        }, '')
+      : '';
     console.log(currenciesMarkup, languagesMarkup);
     const markup = `<div class="detail__preview">
           <div class="detail__img-box">
@@ -223,53 +233,10 @@ class App {
         </div>`;
     detailEl.insertAdjacentHTML('beforeend', markup);
   }
+  _clearDetail() {
+    let detailPreview = detailEl.querySelector('.detail__preview');
+    if (!detailPreview) return;
+    detailEl.removeChild(detailPreview);
+  }
 }
 const app = new App();
-
-// Native Name : data.name.nativeName
-
-// const data = {
-//   name: {
-//     nativeName: { hrv: { official: 'Republika Hrvatska', common: 'Hrvatska' } },
-//   },
-//   currencies: {
-//     CKD: { name: 'Cook Islands dollar', symbol: '$' },
-//     NZD: { name: 'New Zealand dollar', symbol: '$' },
-//   },
-//   languages: {
-//     kal: 'Greenlandic',
-//   },
-//   borders: {
-//     0: 'ARM',
-//     1: 'AZE',
-//     2: 'RUS',
-//     3: 'TUR',
-//   },
-// };
-
-// const { common } = Object.values(data.name.nativeName).at(0);
-
-// console.log(common);
-
-// console.log(Object.values(data.currencies));
-// let curArr = [];
-// Object.values(data.currencies).forEach(cur => {
-//   const { name } = cur;
-//   console.log(name);
-//   curArr.push(name);
-// });
-
-// console.log(curArr);
-
-// const currecies = Object.values(data.currencies).reduce((curArr, cur) => {
-//   const { name } = cur;
-//   curArr.push(name);
-//   return curArr;
-// }, []);
-
-// const languages = Object.values(data.languages);
-
-// console.log(languages);
-
-// const borderCountries = Object.values(data.borders);
-// console.log(borderCountries);
