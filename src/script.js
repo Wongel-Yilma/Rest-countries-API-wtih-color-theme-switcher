@@ -10,6 +10,9 @@ const selectFilter = document.querySelector('#region');
 const formEl = document.querySelector('.form');
 const backBtn = document.querySelector('.detail__btn');
 const detailEl = document.querySelector('.detail');
+const body = document.body;
+const themeSelector = document.querySelector('.btn--mode');
+const headerEl = document.querySelector('.header');
 // Dev
 // formEl.classList.add('hidden');
 // document.querySelector('.container').classList.add('hidden');
@@ -44,6 +47,12 @@ class App {
       'click',
       this._addCountryDetailHandler.bind(this)
     );
+    themeSelector.addEventListener('click', function () {
+      body.classList.toggle('night-mode');
+      headerEl.classList.toggle('night-mode');
+      themeSelector.classList.toggle('night-mode');
+      formEl.classList.toggle('night-mode');
+    });
   }
   _addCountryDetailHandler(e) {
     const countryClicked = e.target

@@ -23,6 +23,10 @@ body {
 .hidden {
   display: none !important; }
 
+.night-mode {
+  color: #111517 !important;
+  background-color: #e6e6e6 !important; }
+
 .form {
   margin: 0 auto;
   max-width: 120rem;
@@ -41,7 +45,8 @@ body {
     background-color: #2b3945;
     padding-left: 4rem;
     width: 100%;
-    border-radius: 8px; }
+    border-radius: 8px;
+    box-shadow: 0 0 2rem rgba(17, 21, 23, 0.3); }
     .form__input::placeholder {
       color: #e6e6e6; }
   .form__btn {
@@ -59,7 +64,8 @@ body {
     background-color: #2b3945;
     border-radius: 8px;
     padding: 0 2rem;
-    color: #e6e6e6; }
+    color: #e6e6e6;
+    box-shadow: 0 0 2rem rgba(17, 21, 23, 0.3); }
 
 .country {
   color: #e6e6e6;
@@ -72,7 +78,7 @@ body {
     margin-bottom: 2rem; }
   .country__flag-img {
     width: 100%;
-    height: 22rem; }
+    height: 18rem; }
   .country p {
     font-weight: 600; }
   .country__info {
@@ -152,6 +158,17 @@ body {
     .detail__border-btn:hover {
       background-color: #202c37; }
 
+.night-mode .form__input,
+.night-mode .heading-1,
+.night-mode .form select,
+.night-mode .form__input::placeholder,
+.night-mode .country,
+.night-mode .detail,
+.night-mode .detail__btn,
+.night-mode .detail__border-btn {
+  color: #111517 !important;
+  background-color: #e6e6e6 !important; }
+
 .header {
   margin: 0 auto;
   color: #e6e6e6;
@@ -160,7 +177,9 @@ body {
   background-color: #2b3945;
   width: 100vw;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  box-shadow: 0 0 2rem rgba(17, 21, 23, 0.3);
+  margin-bottom: 2rem; }
   .header__container {
     margin: 0 auto;
     width: 120rem;
@@ -192,7 +211,7 @@ body {
 
 .countries {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 3rem;
   row-gap: 4rem; }
 

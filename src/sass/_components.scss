@@ -19,8 +19,10 @@
     padding-left: 4rem;
     width: 100%;
     border-radius: 8px;
+    box-shadow: 0 0 2rem rgba($primary-dark, 0.3);
+
     &::placeholder {
-      color: $gray-light
+      color: $gray-light;
     }
   }
   &__btn {
@@ -41,6 +43,7 @@
     border-radius: 8px;
     padding: 0 2rem;
     color: $gray-light;
+    box-shadow: 0 0 2rem rgba($primary-dark, 0.3);
   }
 }
 
@@ -56,7 +59,7 @@
   }
   &__flag-img {
     width: 100%;
-    height: 22rem;
+    height: 18rem;
   }
   p {
     font-weight: 600;
@@ -155,4 +158,16 @@
       background-color: $primary-color;
     }
   }
+}
+
+.night-mode .form__input,
+.night-mode .heading-1,
+.night-mode .form select,
+.night-mode .form__input::placeholder,
+.night-mode .country,
+.night-mode .detail,
+.night-mode .detail__btn,
+.night-mode .detail__border-btn {
+  color: $primary-dark !important;
+  background-color: $gray-light !important;
 }

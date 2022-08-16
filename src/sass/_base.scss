@@ -31,3 +31,8 @@ body {
 .hidden {
   display: none !important;
 }
+
+.night-mode {
+  color: $primary-dark !important;
+  background-color: $gray-light !important;
+}
